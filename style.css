@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imprima&family=Inter:wght@400;500&family=Roboto&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Logo */
+span.mag {
+  color: aquamarine;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* Cover Title div */
+
+div.title > h1 {
+  margin: 0;
+  /* font-size: 42.79; */
+}
+
+div.title > p {
+  margin-top: 0;
+}
+
+#app {
+  padding: 60px 5% 0 5%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/cover.jpg);
+  background-size: 500px 500px;
+  background-position: bottom;
+  color: #ffffff;
+}
+
+a.watch-list-anchor {
+  font-size: 14px;
+  padding: 8px 8px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+a.watch-list-anchor:hover {
+  background-color: aqua;
+  color: black;
+  padding: 8px 8px;
+  border-radius: 8px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+div.logo_Watchlist {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+/* img.cover {
+  height: 208px;
+  object-fit: cover;
+  object-position: bottom;
+} */
+
+img {
+  width: 100%;
+}
+
+/* Search bar and btn */
+div#search-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  /* border: 1px white solid; */
+}
+
+div.results-list-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  /* border: 1px solid white; */
+}
+
+.result-list-popup {
+  margin-left: 24px;
+  display: none;
+  width: 80%;
+  max-width: 384px;
+  height: 300%;
+  margin-right: 6px;
+  background-color: #121212;
+  z-index: 5;
+  /* border-radius: 0 0px 7px 7px; */
+  overflow-y: scroll;
+}
+
+.popup-no-response {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 2em;
+  height: fit-content;
+}
+
+/* JS Use Class */
+.show-results-list {
+  display: block;
+}
+/* --- */
+
+div.result-list-popup::-webkit-scrollbar {
+  width: 8px;
+}
+
+div.result-list-popup::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+div.result-list-popup::-webkit-scrollbar-thumb {
+  background-color: #81ca0b;
+  outline: none;
+  border-radius: 100px;
+}
+
+div.result-item {
+  background-color: #1212129f;
+  /* padding: 0.1rem; */
+  border-bottom: 1px solid #fffefd;
+  width: 100%;
+  color: #fffefd;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+div.result-item {
+  display: flex;
+  align-items: center;
+}
+
+div.result-item:hover {
+  background-color: #8883837a;
+}
+
+div.result-item-thumbnail {
+  margin-right: 0.700rem;
+}
+
+div.result-item-thumbnail > img {
+  width: 40px;
+  margin-left: 10px;
+}
+
+.result-item-info > h3 {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.result-item-info > p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.6;
+  margin-bottom: 1.3rem;
+}
+
+/* One Movie complete result */
+.result-container {
+  padding: 1em;
+  border-radius: 10px;
+  margin-top: -90px;
+  margin-left: 30px;
+  color: white;
+  height: max-content;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 500px;
+  background-color: #1f1e1ec4;
+  display: flex;
+  justify-content: center;
+}
+
+.result-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.movie-poster {
+  width: 35%;
+  border: 5px solid wheat;
+}
+
+div.movie-poster img {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+}
+
+div.movie-info {
+  text-align: left;
+  padding-top: 1rem;
+  color: #ffffff;
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
+div.movie-info b {
+  color: rgb(223, 176, 165);
+  font-size: 1.4rem;
+  font-family: 'Noto Sans Mono', monospace;
+}
+
+div.movie-info ul{
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgb(93, 95, 93);
+}
+
+h2.movie-title {
+  font-size: 2rem;
+  font-family: 'Secular One', sans-serif;
+  color: #d1ff87;
+}
+
+.movie-misc-info {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+div.movie-title-div {
+  text-align: center;
+}
+
+li span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(34, 192, 255);
+  font-family: 'Secular One', sans-serif;
+}
+/* --- */
+
+
+input#search {
+  border-radius: 2px 0px 0px 2px;
+  margin: 0;
+  align-self: flex-start;
+  width: 100%;
+  max-width: 375px;
+  margin-right: 0px;
+  height: 30px;
+  background-color: #2E2E2F;
+  text-indent: 25px;
+  color: #ffffff;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  font-family: inherit;
+  /* Temporary margin
+  margin-bottom: 10px; */
+}
+
+input::placeholder {
+  font-style: italic;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input:hover {
+  outline: none;
+  border: none;
+}
+
+button#search-btn {
+  height: 30px;
+  background-color: #4B4B4B;
+  color: #ffffff;
+  border-radius: 0px 2px 2px 0px;
+  width: 40px;
+  border: 0;
+  position: relative;
+  right: 6px;
+  cursor: pointer;
+}
+
+/* search results or list */
+
+#empty-results{
+  border-radius: 8px 8px 0px 0px;
+  margin-top: -90px;
+  padding-top: 4.5em;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  background-color: #8f8a8a79;
+  text-align: center;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* movie search result item */
+
+.cover {
+  width: 80px;
+  border-radius: 4px;
+}
+
+.movie-title {
+  font-family: 'Imprima', sans-serif;
+  font-size: 14px;
+}
+
+
+/* Icons */
+.fa-solid {
+  font-size: 15px;
+  color: #fffefd;
+}
+
+.fa-magnifying-glass {
+  position: relative;
+  left: 20px;
+  top: 9px;
+  font-size: 12px;
+}
+
+svg {
+  fill: #81ca0b;
+}
